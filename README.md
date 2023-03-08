@@ -53,10 +53,9 @@ The quality of the webp image generated from png or jpg.
 ### name
 Type: `string`  
 Default: `[hash].[ext]`  
-The filename and relative path of the generated webp image.  
-### 其他API
-Other parameters can refer to [imagemin-webp](https://github.com/imagemin/imagemin-webp).  
+The filename and relative path of the generated webp image.   
 
 ## Tips
-1. If cwebp-bin throws an error, check whether there is a vendor folder under cwebp-bin in node_modules. If not, you need to reinstall this dependency package.
+If cwebp-bin throws an error, check whether there is a vendor folder under cwebp-bin in node_modules. If not, you need to reinstall this dependency package.  
 
+Other parameters can refer to [imagemin-webp](https://github.com/imagemin/imagemin-webp). 
