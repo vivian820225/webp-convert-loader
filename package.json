@@ -1,0 +1,30 @@
+{
+  "name": "webp-convert-loader",
+  "version": "1.0.0",
+  "description": "Convert images such as PNG and JPG to WebP format.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vivian",
+  "license": "ISC",
+  "keywords": ["webp", "file-loader", "url-loader"],
+  "dependencies": {
+    "imagemin": "^7.0.1",
+    "imagemin-webp": "^6.0.0",
+    "loader-utils": "^2.0.0",
+    "mime": "^2.6.0"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivian820225/webp-convert-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vivian820225/webp-convert-loader/issues"
+  },
+  "homepage": "https://github.com/vivian820225/webp-convert-loader#readme"
+}
