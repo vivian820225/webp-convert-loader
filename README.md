@@ -1,14 +1,14 @@
 # webp-convert-loader
 A webpack loader that can convert small images into base64 format and generate new webp images with the hash of the source file name. It also preserves the source image.
 ## Features
-	1. In development mode, a webp image with the same name will be generated in the cache.
-  2. Supports passing the limit parameter, which limits images under 10k to be converted to base64, while images above that size will be generated as webp images with the same name.
-## Installation
+- In development mode, a webp image with the same name will be generated in the cache.
+- Supports passing the limit parameter, which limits images under 10k to be converted to base64, while images above that size will be generated as webp images with the same name.
+## Install
 ```
 npm install --save-dev webp-convert-loader
 ```
 ## Usage
-1. webpack / vue-cli2.0 configure as follows:
+- webpack / vue-cli2.0 configure as follows:
 ```
 {
   test: /\.(png|jpe?g)(\?.*)?$/,
@@ -22,7 +22,7 @@ npm install --save-dev webp-convert-loader
   }]
 }
 ```
-2. vue-cli3.0 configure as follows:
+- vue-cli3.0 configure as follows:
 ```
 module.exports = {
   chainWebpack: config => {
@@ -42,20 +42,17 @@ module.exports = {
 }
 ```
 ## API
-### limit
+#### limit
 Type: `string|number`  
 Default: `10240`  
 Converts images under 10k to base64 by default.  
-### quality  
+#### quality  
 Type: `string|number`  
 Default: `80`  
 The quality of the webp image generated from png or jpg.  
-### name
+#### name
 Type: `string`  
 Default: `[hash].[ext]`  
 The filename and relative path of the generated webp image.   
-
-## Tips
-If cwebp-bin throws an error, check whether there is a vendor folder under cwebp-bin in node_modules. If not, you need to reinstall this dependency package.  
 
 Other parameters can refer to [imagemin-webp](https://github.com/imagemin/imagemin-webp). 
