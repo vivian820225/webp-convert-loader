@@ -14,6 +14,8 @@
 
 var imagemin = require("imagemin");
 var imageminWebp = require("imagemin-webp");
+var imageminJpegtran = require("imagemin-jpegtran");
+var imageminPngquant = require("imagemin-pngquant");
 var loaderUtils = require("loader-utils");
 var mime = require("mime");
 
@@ -73,15 +75,29 @@ module.exports = function (content) {
   } else {
   // image compression
   imagemin
-    .buffer(content, { plugins: [imageminWebp(options)] })
+    .buffer(content, {
+      plugins: [
+        imageminWebp(options),
+        imageminJpegtran(),
+        imageminPngquant({
+          quality: [0.6, 0.8],
+        }),
+      ],
+    })
     .then((file) => {
       // Output the source file
       this.emitFile(url, content);
       // Output the webp file
       this.emitFile(webpUrl, file);
       // Default to display the original image
-      callback(null, "module.exports = __webpack_public_path__ + " + JSON.stringify(url) + ";");
-    }).catch((err) => {
+      callback(
+        null,
+        "module.exports = __webpack_public_path__ + " +
+          JSON.stringify(url) +
+          ";"
+      );
+    })
+    .catch((err) => {
       callback(err);
     });
   }
